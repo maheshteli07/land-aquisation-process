@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Land Acquisition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login-box">
+    <h3>Login Portal</h3>
+
+    <label for="role">Select Role:</label>
+    <select id="role" name="role">
+      <option value="collector">Land Acquisition Collector</option>
+      <option value="owner">Land Owner</option>
+      <option value="sia">SIA (Expert Group)</option>
+    </select>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <a href="#" class="forgot">Forgot Password?</a>
+
+    <!-- Changed type to button to prevent form submit -->
+    <button type="button" onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      const role = document.getElementById("role").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username && password) {
+        if (role === "collector") {
+          window.location.href = "noti.html";
+        } else if (role === "owner") {
+          window.location.href = "own.html";
+        } else if (role === "sia") {
+          window.location.href = "SIA.html";
+        }
+      } else {
+        alert("Please enter both username and password.");
+      }
+    }
+  </script>
+
+</body>
+</html>
